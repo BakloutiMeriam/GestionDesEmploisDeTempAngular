@@ -1,0 +1,69 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Modifier un Enseignant</h2>
+    <form (ngSubmit)="onSubmit()" #teacherForm="ngForm">
+      <div class="mb-3">
+        <label for="firstname" class="form-label">Prénom</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstname"
+          name="firstname"
+          [(ngModel)]="teacher.firstname"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="lastname" class="form-label">Nom</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastname"
+          name="lastname"
+          [(ngModel)]="teacher.lastname"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="teacher.email"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Numéro de Téléphone</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phoneNumber"
+          name="phoneNumber"
+          [(ngModel)]="teacher.phone"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="department" class="form-label">Département</label>
+        <input
+          type="text"
+          class="form-control"
+          id="department"
+          name="department"
+          [(ngModel)]="teacher.department"
+          required
+        />
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!teacherForm.form.valid">
+        Mettre à jour
+      </button>
+    </form>
+  </div>
+  

@@ -1,0 +1,53 @@
+/* Style global */
+body {
+    background-color: #f8f9fa; /* Fond clair */
+  }
+  
+  /* Style de la carte */
+  .card {
+    background-color: #ffffff; /* Fond blanc */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+  }
+  
+  /* Style des labels */
+  .form-label {
+    font-size: 1rem;
+    color: #495057; /* Texte des labels en gris élégant */
+    font-weight: bold;
+  }
+  
+  /* Champs de formulaire */
+  .form-control-lg {
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Boutons */
+  .btn-success {
+    background: #495057;
+    border: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-success:hover {
+    background:#495057;
+  }
+  
+  .btn-secondary {
+    background: #6c757d;
+    border: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-secondary:hover {
+    background: #5a6268;
+  }
+  
+  /* Espace entre les sections */
+  .mb-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  

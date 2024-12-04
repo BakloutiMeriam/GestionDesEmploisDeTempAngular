@@ -1,0 +1,57 @@
+/* Arrière-plan de la page */
+body {
+    background: linear-gradient(to right, #f06, #4c7bf2);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Formulaire */
+  form {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Bordure et ombre pour le bouton de soumission */
+  button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Animation de l'hover pour les boutons */
+  button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style de l'alerte d'erreur */
+  .alert {
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  
+  /* Icônes dans les champs */
+  .input-group-text {
+    background-color: #f2f2f2;
+    border-right: 0;
+    border-radius: 8px 0 0 8px;
+  }
+  
+  .form-control {
+    border-radius: 8px;
+    box-shadow: none;
+  }
+  
+  /* Animation du focus sur le champ de texte */
+  .form-control:focus {
+    border-color: #4c7bf2;
+    box-shadow: 0px 0px 5px rgba(76, 123, 242, 0.5);
+  }
+  
+  /* Titre du formulaire */
+  h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    color: #333333;
+  }
+  

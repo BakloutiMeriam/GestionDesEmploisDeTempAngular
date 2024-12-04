@@ -1,0 +1,79 @@
+/* Global */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  /* Barre de navigation */
+  .navbar {
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  /* Menu gauche */
+  .sidebar {
+    background-color: #f1f3f5;
+  }
+  
+  .sidebar .nav-link {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar .nav-link:hover {
+    background-color: #e2e6ea;
+  }
+  
+  /* Carte de statistiques */
+  .card {
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Boutons */
+  button {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Tableau */
+  .table {
+    border-radius: 10px;
+  }
+  
+  .table th, .table td {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .table-striped tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  
+    .table-responsive {
+      overflow-x: auto;
+    }
+  }
+  

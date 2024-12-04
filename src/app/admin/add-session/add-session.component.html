@@ -1,0 +1,78 @@
+<div class="container mt-5">
+  <div class="card shadow-lg p-4 border-0 rounded-4">
+    <h2 class="text-center mb-4 text-success">Ajouter une Nouvelle Session</h2>
+
+    <form (ngSubmit)="addSession()">      <div class="mb-4">
+        <label for="sessiondate" class="form-label fw-semibold">Date</label>
+        <input
+          type="date"
+          id="sessiondate"
+          class="form-control form-control-lg"
+          [(ngModel)]="newSession.sessiondate"
+          name="sessiondate"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="startime" class="form-label fw-semibold">Heure de Début</label>
+        <input
+          type="time"
+          id="startime"
+          class="form-control form-control-lg"
+          [(ngModel)]="newSession.startime"
+          name="startime"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="endtime" class="form-label fw-semibold">Heure de Fin</label>
+        <input
+          type="time"
+          id="endtime"
+          class="form-control form-control-lg"
+          [(ngModel)]="newSession.endtime"
+          name="endtime"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="teacherId" class="form-label fw-semibold">Enseignant (ID)</label>
+        <input
+          type="number"
+          id="teacherId"
+          class="form-control form-control-lg"
+          [(ngModel)]="newSession.teacherId"
+          name="teacherId"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="roomId" class="form-label fw-semibold">Salle (ID)</label>
+        <input
+          type="number"
+          id="roomId"
+          class="form-control form-control-lg"
+          [(ngModel)]="newSession.roomId"
+          name="roomId"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="classId" class="form-label fw-semibold">Classe</label>
+        <input
+          type="number"
+          id="classId"
+          class="form-control form-control-lg"
+          [(ngModel)]="newSession.classId"
+          name="classId"
+          required
+        />
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-success btn-lg px-5">Ajouter</button>
+        <button type="button" class="btn btn-secondary btn-lg px-5" (click)="goBack()">Annuler</button>
+      </div>
+    </form>
+  </div>
+</div>

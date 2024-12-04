@@ -1,0 +1,53 @@
+/* Style global */
+body {
+    background-color: #f5f6fa; /* Fond clair pour un design moderne */
+  }
+  
+  /* Carte */
+  .card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* En-tête */
+  h2 {
+    font-weight: bold;
+  }
+  
+  /* Labels */
+  .form-label {
+    font-size: 1rem;
+    color: #333333; /* Couleur subtile */
+  }
+  
+  /* Champs de saisie */
+  .form-control-lg {
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+  
+  /* Bouton */
+  .btn-primary {
+    background-color:  #1d3557;
+    border: none;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background-color:  #1d3557;
+    transform: translateY(-2px);
+  }
+  
+  .btn:disabled {
+    background-color: #a1a1a1;
+    cursor: not-allowed;
+  }
+  
+  /* Espacement entre les champs */
+  .mb-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  

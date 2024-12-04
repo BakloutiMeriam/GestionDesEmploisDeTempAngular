@@ -1,0 +1,94 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg" style="background-color: #1d3557; color: #ffffff;">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fw-bold" href="#">Gestion des Emplois du Temps</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#" (click)="logout()">Déconnexion</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="row">
+  
+
+    <!-- Contenu principal -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      </div>
+
+      <!-- Section des statistiques -->
+      <div class="row mb-4 d-flex ">
+        <div class="col-md-4">
+          <div class="card text-white mb-3 shadow" style="background-color: #457b9d;">
+            <div class="card-body">
+              <h5 class="card-title">Nombre de sessions</h5>
+              <p class="card-text fs-4">{{ sessionCount }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire de filtrage avec un design moderne -->
+      <div class="container mt-3 mb-4">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="input-group w-50">
+            <input
+              id="teacherId"
+              type="text"
+              class="form-control shadow-sm"
+              [(ngModel)]="teacherName"
+              placeholder="Entrez l'ID de l'enseignant"
+              style="border: 2px solid #457b9d;"
+            />
+            <button class="btn text-white ms-2 shadow-sm" (click)="filterSessions()" style="background-color: #1d3557;">
+              Filtrer
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Liste des emplois du temps avec un style moderne -->
+      <div class="container mt-5">
+        <div class="table-responsive">
+          <table class="table table-striped table-hover shadow rounded">
+            <thead style="background-color: #1d3557; color: #ffffff;">
+              <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Début</th>
+                <th>Fin</th>
+                <th>Enseignant</th>
+                <th>Salle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let session of sessions">
+                <td>{{ session.id }}</td>
+                <td>{{ session.sessiondate | date: 'yyyy-MM-dd' }}</td>
+                <td>{{ session.startime }}</td>
+                <td>{{ session.endtime }}</td>
+                <td>{{ session.teacher?.firstname }} {{ session.teacher?.lastname }}</td>
+                <td>{{ session.room?.roomname }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

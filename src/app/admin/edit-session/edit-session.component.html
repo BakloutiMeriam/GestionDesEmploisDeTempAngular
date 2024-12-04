@@ -1,0 +1,72 @@
+<div class="container mt-5">
+  <div class="card shadow-lg p-4 border-0 rounded-4">
+    <h2 class="text-center mb-4 text-primary">Modifier la Session</h2>
+    
+    <form (ngSubmit)="updateSession()">
+      <div class="mb-4">
+        <label for="sessiondate" class="form-label fw-semibold">Date</label>
+        <input
+          type="date"
+          id="sessiondate"
+          class="form-control form-control-lg"
+          [(ngModel)]="session.sessiondate"
+          name="sessiondate"
+          required
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="startime" class="form-label fw-semibold">Heure de Début</label>
+        <input
+          type="time"
+          id="startime"
+          class="form-control form-control-lg"
+          [(ngModel)]="session.startime"
+          name="startime"
+          required
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="endtime" class="form-label fw-semibold">Heure de Fin</label>
+        <input
+          type="time"
+          id="endtime"
+          class="form-control form-control-lg"
+          [(ngModel)]="session.endtime"
+          name="endtime"
+          required
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="teacherId" class="form-label fw-semibold">Enseignant</label>
+        <input
+          type="text"
+          id="teacherId"
+          class="form-control form-control-lg"
+          [(ngModel)]="session.teacherId"
+          name="teacherId"
+          required
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="roomId" class="form-label fw-semibold">Salle</label>
+        <input
+          type="text"
+          id="roomId"
+          class="form-control form-control-lg"
+          [(ngModel)]="session.roomId"
+          name="roomId"
+          required
+        />
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary btn-lg px-5">Mettre à Jour</button>
+        <button type="button" class="btn btn-secondary btn-lg px-5" (click)="goBack()">Annuler</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+/* Style pour la navbar principale */
+.custom-navbar {
+    background-color: #1d3557;
+    border-bottom: 2px solid #ffffff;
+  }
+  
+  .custom-navbar .navbar-brand {
+    font-size: 1.5rem;
+    color: #ffffff !important;
+  }
+  
+  .custom-navbar .nav-link {
+    color: #ffffff !important;
+    transition: color 0.3s ease;
+  }
+  
+  
+  
+  /* Style pour le menu latéral */
+  .custom-sidebar {
+    background-color: #1d3557;
+    color: #ffffff;
+    height: 100vh;
+  }
+  
+  .custom-sidebar .nav-link {
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+  }
+  
+  
+  
+  .custom-sidebar i {
+    margin-right: 8px;
+  }
+  

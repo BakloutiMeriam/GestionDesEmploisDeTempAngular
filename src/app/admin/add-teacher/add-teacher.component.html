@@ -1,0 +1,84 @@
+<div class="container mt-5">
+  <div class="card shadow-lg p-4 border-0 rounded-4">
+    <h2 class="text-center mb-4 text-primary">Ajouter un Enseignant</h2>
+    <form (ngSubmit)="onSubmit()" #teacherForm="ngForm">
+      <!-- Prénom -->
+      <div class="mb-4">
+        <label for="firstname" class="form-label fw-semibold">Prénom</label>
+        <input
+          type="text"
+          id="firstname"
+          class="form-control form-control-lg"
+          name="firstname"
+          [(ngModel)]="teacher.firstname"
+          required
+        />
+      </div>
+
+      <!-- Nom -->
+      <div class="mb-4">
+        <label for="lastname" class="form-label fw-semibold">Nom</label>
+        <input
+          type="text"
+          id="lastname"
+          class="form-control form-control-lg"
+          name="lastname"
+          [(ngModel)]="teacher.lastname"
+          required
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="mb-4">
+        <label for="email" class="form-label fw-semibold">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control form-control-lg"
+          name="email"
+          [(ngModel)]="teacher.email"
+          required
+        />
+      </div>
+
+      <!-- Numéro de téléphone -->
+      <div class="mb-4">
+        <label for="phoneNumber" class="form-label fw-semibold">Numéro de Téléphone</label>
+        <input
+          type="text"
+          id="phoneNumber"
+          class="form-control form-control-lg"
+          name="phoneNumber"
+          [(ngModel)]="teacher.phone"
+          required
+        />
+      </div>
+
+      <!-- Département -->
+      <div class="mb-4">
+        <label for="department" class="form-label fw-semibold">Département</label>
+        <input
+          type="text"
+          id="department"
+          class="form-control form-control-lg"
+          name="department"
+          [(ngModel)]="teacher.department"
+          required
+        />
+      </div>
+
+      <!-- Bouton d'envoi -->
+      <div class="d-flex justify-content-center">
+        <button
+          type="submit"
+          class="btn btn-primary btn-lg px-5"
+          [disabled]="!teacherForm.form.valid"
+        >
+          Ajouter
+        </button>
+                <button type="button" class="btn btn-secondary btn-lg px-5" (click)="goBack()">Annuler</button>
+
+      </div>
+    </form>
+  </div>
+</div>

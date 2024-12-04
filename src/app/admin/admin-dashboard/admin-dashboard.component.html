@@ -1,0 +1,144 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg shadow-sm fixed-top custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light fw-bold" href="#">Gestion des Emplois du Temps</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-warning fw-bold" href="#" (click)="logout()">Déconnexion</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  <div class="row mt-5">
+    <nav class="col-md-3 col-lg-2 d-md-block sidebar py-4 custom-sidebar">
+      <div class="position-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" routerLink="/admin-dashboard">
+              <i class="bi bi-calendar3"></i> Gérer les emplois du temps
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" routerLink="/listteacher">
+              <i class="bi bi-people-fill"></i> Gérer les enseignants
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between align-items-center pt-4 pb-2 mb-4 border-bottom">
+        <h1 class="h3 text-primary"style=" color: #1d3557 ;"> Admin</h1>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body text-center">
+              <h5 class="card-title text-primary">Nombre de salles</h5>
+              <p class="fs-2 fw-bold">{{ statistics.rooms }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body text-center">
+              <h5 class="card-title text-success">Nombre d'enseignants</h5>
+              <p class="fs-2 fw-bold">{{ statistics.teachers }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body text-center">
+              <h5 class="card-title text-warning">Nombre de sessions</h5>
+              <p class="fs-2 fw-bold">{{ statistics.sessions }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-md-4">
+          <label for="startDate" class="form-label">Date de début :</label>
+          <input
+            type="date"
+            id="startDate"
+            class="form-control"
+            [(ngModel)]="filter.startDate"
+          />
+        </div>
+        <div class="col-md-4">
+          <label for="endDate" class="form-label">Date de fin :</label>
+          <input
+            type="date"
+            id="endDate"
+            class="form-control"
+            [(ngModel)]="filter.endDate"
+          />
+        </div>
+        <div class="col-md-4 d-flex align-items-end">
+          <button class="btn btn-primary w-100" (click)="filterSessions()">Filtrer</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <h2 class="text-center mb-4">Liste des Emplois du Temps</h2>
+        <table class="table table-hover table-bordered">
+          <thead style="background-color: #457b9d; color: #ffffff; font-weight: bold; text-align: center;">
+            <tr>
+              <th>ID</th>
+              <th>Date</th>
+              <th>Début</th>
+              <th>Fin</th>
+              <th>Enseignant</th>
+              <th>Salle</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            <tr *ngFor="let session of sessions">
+              <td>{{ session.id }}</td>
+              <td>{{ session.sessiondate | date: 'yyyy-MM-dd' }}</td>
+              <td>{{ session.startime }}</td>
+              <td>{{ session.endtime }}</td>
+              <td>{{ session.teacher?.firstname }} {{ session.teacher?.lastname }}</td>
+              <td>{{ session.room?.roomname }}</td>
+              <td>
+                <a class="btn btn-sm btn-outline-primary" [routerLink]="['/edit-session', session.id]">
+                  <i class="bi bi-pencil"></i>
+                </a>
+                <button class="btn btn-sm btn-outline-danger" (click)="deleteSession(session.id)">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="text-end">
+          <button class="btn btn-success btn-sm" [routerLink]="['/add-session']">
+            Ajouter un Emploi
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
